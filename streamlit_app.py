@@ -1570,7 +1570,8 @@ with tab_financial:
         costs_df = pd.DataFrame(st.session_state.costs_data)
         
         # Create an editable dataframe
-        edited_costs_df = st.data_editor(
+        edited_costs_df["Monthly"] = pd.to_numeric(edited_costs_df["Monthly"], errors="coerce").fillna(0)
+
             costs_df,
             use_container_width=True,
             num_rows="fixed",
