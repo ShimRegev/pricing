@@ -1606,7 +1606,7 @@ with tab_financial:
             "Contingency": edited_costs_df["Contingency"].tolist()
         }
         
-        # Calculate totals based on the edited data
+      edited_costs_df["Monthly"] = edited_costs_df["Monthly"].replace({",": ""}, regex=True).astype(float)
         monthly_total = sum(edited_costs_df["Monthly"])
         
         # Display totals
