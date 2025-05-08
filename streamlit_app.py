@@ -1567,6 +1567,7 @@ with tab_financial:
             "Yearly": ["300000", "5000", "8000", 75000, "200000", 80000, 100000, 60000, "10000", "30000", "5000","2000"],
             "Annual Growth":["5.00%", "3.00%", "10.00%", "0.00%", "8.00%", "12.00%", "15.00%", "10.00%", "5.00%", "10.00%", "3.00%", "20.00%"],
             "Contingency": ["10.00%", "5.00%", "10.00%", "0.00%", "10.00%", "15.00%", "15.00%", "10.00%", "10.00%", "10.00%", "5.00%", "15.00%"]
+        }
         # Create a session state key for the costs data if it doesn't exist
         if 'costs_data' not in st.session_state:
             st.session_state.costs_data = default_costs_data
