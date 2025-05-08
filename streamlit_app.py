@@ -1553,26 +1553,20 @@ with tab_financial:
     with st.expander("Cost Structure", expanded=True):
         st.markdown("### Monthly Cost Structure")
         
-        # Define default cost structure data
-       default_costs_data = {
-    "Expense": [
-        "Director Salaries (2x)", "Rent", "Software", "Debt equity", "Engineer", 
-        "CMO", "Sales", "Freelance", "Legal", "Customer support", "Accounting", "travel"
-    ],
-    "Monthly": [
-        25000, 417, 667, 6250, 16667, 6667, 8333, 5000, 833, 2500, 417, 167
-    ],
-    "Yearly": [
-        300000, 5000, 8000, 75000, 200000, 80000, 100000, 60000, 10000, 30000, 5000, 2000
-    ],
-    "Annual Growth": [
-        "5.00%", "3.00%", "10.00%", "0.00%", "8.00%", "12.00%", "15.00%", "10.00%", "5.00%", "10.00%", "3.00%", "20.00%"
-    ],
-    "Contingency": [
-        "10.00%", "5.00%", "10.00%", "0.00%", "10.00%", "15.00%", "15.00%", "10.00%", "10.00%", "10.00%", "5.00%", "15.00%"
-    ]
-}
-        
+ # Define default cost structure data
+        default_costs_data = {
+            "Expense": ["Rent", "Software", "Office", "Director Salaries (2x)", "Debt equity", 
+                       "Engineer", "CMO", "Sales", "Freelance", "Legal", "Customer support"],
+            "Monthly": [5000, 6000, 600, 25000, 75000, 16667, 8333, 8333, 8000, 0, 7500],
+            "Yearly": ["", "", "", 300000, "", 200000, 100000, 100000, "", "", 90000],
+            "Annual Growth": ["5.00%", "20.00%", "5.00%", "2.00%", "0.00%", "5.00%", "5.00%", "5.00%", "0.00%", "0.00%", "2.00%"],
+            "Contingency": ["25%", "200%", "5%", "25%", "0%", "20%", "20%", "20%", "25%", "25%", "20%"]
+            "Expense": ["Director Salaries (2x)", "Rent", "Software", "Debt equity", "Engineer", 
+                       "CMO", "Sales", "Freelance", "Legal", "Customer support","Accounting","travel"],
+            "Monthly":["25000", "417", "667", "6250", "16667", "6667", "8333", "5000", "833", "2500", "417", "167"],
+            "Yearly": ["300000", "5000", "8000", 75000, "200000", 80000, 100000, 60000, "10000", "30000", "5000","2000"],
+            "Annual Growth":["5.00%", "3.00%", "10.00%", "0.00%", "8.00%", "12.00%", "15.00%", "10.00%", "5.00%", "10.00%", "3.00%", "20.00%"],
+            "Contingency": ["10.00%", "5.00%", "10.00%", "0.00%", "10.00%", "15.00%", "15.00%", "10.00%", "10.00%", "10.00%", "5.00%", "15.00%"]
         # Create a session state key for the costs data if it doesn't exist
         if 'costs_data' not in st.session_state:
             st.session_state.costs_data = default_costs_data
